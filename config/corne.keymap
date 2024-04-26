@@ -29,7 +29,7 @@
         wp3: wp3 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none &kp J &kp O &kp N &kp A &kp T &kp H &kp A &kp N &kp DOT &kp T &kp A &kp N &kp G &kp N2>;
+            bindings = <&none &kp J &kp O &kp N &kp A &kp T &kp H &kp A &kp N &kp DOT &kp T &kp A &kp N &kp G &kp N2 &kp TAB>;
             label = "WP3";
         };
 
@@ -62,7 +62,7 @@
             #binding-cells = <0>;
             bindings = <&mo 1>, <&to 1>;
 
-            tapping-term-ms = <250>;
+            tapping-term-ms = <100>;
         };
 
         td2: td2 {
@@ -71,7 +71,7 @@
             #binding-cells = <0>;
             bindings = <&mo 2>, <&mo 3>;
 
-            tapping-term-ms = <250>;
+            tapping-term-ms = <100>;
         };
 
         td_bt0: td_bt0 {
@@ -109,11 +109,22 @@
             bindings = <&bt BT_SEL 4>, <&bt BT_CLR>;
         };
 
+        td_tab_esc: td_tab_esc {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_TAB_ESC";
+            #binding-cells = <0>;
+            bindings = <&kp TAB>, <&kp ESC>;
+            
+            tapping-term-ms = <50>;
+        };
+
         td_minus_equal: td_minus_equal {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_MINUS_EQUAL";
             #binding-cells = <0>;
             bindings = <&kp MINUS>, <&kp EQUAL>;
+            
+            tapping-term-ms = <50>;
         };
     };
 
@@ -145,10 +156,10 @@
 
             display-name = "WORK";
             bindings = <
-&kp ESC  &trans  &trans    &kp UP_ARROW                &kp LC(PG_UP)  &kp LC(PG_DN)    &kp KP_SLASH     &kp KP_NUMBER_7  &kp KP_N8  &kp KP_N9  &kp KP_MINUS  &trans
-&trans   &trans  &kp LEFT  &kp DOWN                    &kp RIGHT      &kp PERCENT      &kp KP_MULTIPLY  &kp KP_N4        &kp KP_N5  &kp KP_N6  &kp KP_PLUS   &kp LEFT_ALT
-&trans   &trans  &trans    &trans                      &sw1           &sw2             &trans           &kp KP_N1        &kp KP_N2  &kp KP_N3  &kp KP_DOT    &trans
-                           &mt LEFT_GUI DOUBLE_QUOTES  &to 0          &trans           &trans           &td2             &kp KP_N0
+&td_tab_esc  &trans  &trans    &kp UP_ARROW                &kp LC(PG_UP)  &kp LC(PG_DN)    &kp KP_SLASH     &kp KP_NUMBER_7  &kp KP_N8  &kp KP_N9  &kp KP_MINUS  &trans
+&trans       &trans  &kp LEFT  &kp DOWN                    &kp RIGHT      &kp PERCENT      &kp KP_MULTIPLY  &kp KP_N4        &kp KP_N5  &kp KP_N6  &kp KP_PLUS   &kp LEFT_ALT
+&trans       &trans  &trans    &trans                      &sw1           &sw2             &trans           &kp KP_N1        &kp KP_N2  &kp KP_N3  &kp KP_DOT    &trans
+                               &mt LEFT_GUI DOUBLE_QUOTES  &to 0          &trans           &trans           &td2             &kp KP_N0
             >;
         };
 
