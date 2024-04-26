@@ -62,7 +62,7 @@
             #binding-cells = <0>;
             bindings = <&mo 1>, <&to 1>;
 
-            tapping-term-ms = <100>;
+            tapping-term-ms = <150>;
         };
 
         td2: td2 {
@@ -71,7 +71,7 @@
             #binding-cells = <0>;
             bindings = <&mo 2>, <&mo 3>;
 
-            tapping-term-ms = <100>;
+            tapping-term-ms = <150>;
         };
 
         td_bt0: td_bt0 {
@@ -115,7 +115,7 @@
             #binding-cells = <0>;
             bindings = <&kp TAB>, <&kp ESC>;
             
-            tapping-term-ms = <50>;
+            tapping-term-ms = <150>;
         };
 
         td_minus_equal: td_minus_equal {
@@ -124,7 +124,7 @@
             #binding-cells = <0>;
             bindings = <&kp MINUS>, <&kp EQUAL>;
             
-            tapping-term-ms = <50>;
+            tapping-term-ms = <150>;
         };
     };
 
